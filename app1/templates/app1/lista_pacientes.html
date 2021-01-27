@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista Pacientes</h1>
+    <a href="{% url 'app1:crear' %}"> Agregar Paciente</a> 
+    <table border="1px">
+        <tr>
+            <th>Run</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for elemento in paciente %}
+        <tr>
+            <th>{{ elemento.run }}</th>
+            <th>{{ elemento.nombre }}</th>
+            <th>{{ elemento.apellido }}</th>
+            <th>{{ elemento.edad }}</th>
+            <th><a href="{% url 'app1:editar' pk=elemento.run %}">Editar</a></th>
+            <th><a href="{% url 'app1:eliminar' pk=elemento.run %}">Eliminar</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
