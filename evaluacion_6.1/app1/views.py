@@ -64,40 +64,82 @@ class ExamenesView(View):
     template_name = 'app1/examenes.html'
     success_url = 'app1:examenes'
 
-class ListaExamenes(ListView):
+class ListaExamenesH(ListView):
     model=ExamenHemograma
     template_name = 'app1/examenes.html'
     context_object_name = 'examen'
 
-
-class AgregarExamen(CreateView):
+class AgregarExamenh(CreateView):
     model=ExamenHemograma
     template_name = 'app1/agregar_examen.html'
     fields='__all__'
-    success_url= reverse_lazy('app1:lista')
+    success_url= reverse_lazy('app1:examenes')
 
-class EliminarExamen(DeleteView):
+class EliminarExamenh(DeleteView):
     model=ExamenHemograma
     template_name = 'app1/eliminar_examen.html'
     fields='__all__'
-    success_url=reverse_lazy('app1:lista')
+    success_url=reverse_lazy('app1:examenes')
     context_object_name = 'examen'
+
+class ListaExamenespl(ListView):
+    model=ExamenPerfill
+    template_name = 'app1/examenes.html'
+    context_object_name = 'examen'
+
+class AgregarExamenpl(CreateView):
+    model=ExamenPerfill
+    template_name = 'app1/agregar_examen.html'
+    fields='__all__'
+    success_url= reverse_lazy('app1:examenes')
+
+class EliminarExamenpl(DeleteView):
+    model=ExamenPerfill
+    template_name = 'app1/eliminar_examen.html'
+    fields='__all__'
+    success_url=reverse_lazy('app1:examenes')
+    context_object_name = 'examen'
+
+class ListaExamenespb(ListView):
+    model=ExamenPerfilb
+    template_name = 'app1/examenes.html'
+    context_object_name = 'examen'
+
+class AgregarExamenpb(CreateView):
+    model=ExamenPerfilb
+    template_name = 'app1/agregar_examen.html'
+    fields='__all__'
+    success_url= reverse_lazy('app1:examenes')
+
+class EliminarExamenpb(DeleteView):
+    model=ExamenPerfilb
+    template_name = 'app1/eliminar_examen.html'
+    fields='__all__'
+    success_url=reverse_lazy('app1:examenes')
+    context_object_name = 'examen'
+
 
 class ListaMedicamentos(ListView):
     model=Medicamento
     template_name = 'app1/lista_medicamentos.html'
     context_object_name = 'medicamento'
 
+class AgregarMedicamento(CreateView):
+    model=Medicamento
+    template_name = 'app1/agregar_medicamento.html'
+    fields='__all__'
+    success_url= reverse_lazy('app1:lista_medicamentos')
+
 class EditarMedicamento(UpdateView):
     model=Medicamento
     template_name = 'app1/editar_medicamento.html'
     fields='__all__'
-    success_url=reverse_lazy('app1:lista')
+    success_url=reverse_lazy('app1:lista_medicamentos')
 
 
 class EliminarMedicamento(DeleteView):
     model=Medicamento
     template_name = 'app1/eliminar_medicamento.html'
     fields='__all__'
-    success_url=reverse_lazy('app1:lista')
+    success_url=reverse_lazy('app1:lista_medicamentos')
     context_object_name = 'medicamento'

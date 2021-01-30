@@ -1,21 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block titulo %}PACIENTES{% endblock %}
-
-{% block navbar %} {{block.super}} {% endblock%}
-{% block sidebar %} {{block.super }} {% endblock%}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block content %}
 <body>
-    <h1>Lista de Pacientes</h1>
+    <h1>LISTA PACIENTES</h1>
     <a href="{% url 'app1:crear' %}"> Agregar Paciente</a>
+    <br>
     <table border="1px">
         <tr>
             <th>RUN</th>
@@ -49,5 +39,5 @@
         {% endfor %}
     </table>
 </body>
-
+{% endblock %}
 </html>

@@ -32,6 +32,7 @@ class ExamenPerfilb(models.Model):
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
 
 class Medicamento(models.Model):
+    codigo = models.CharField(max_length=8, primary_key=True)
     fecha_indicacion = models.DateField()
     nombre = models.CharField(max_length=50)
     dosis = models.CharField(max_length=50)
