@@ -22,6 +22,6 @@ urlpatterns = [
     #path('<int:pk>/eliminar_examenpb', views.EliminarExamenpb.as_view(), name='eliminar_examen'),
     path('lista_medicamentos/', views.ListaMedicamentos.as_view(), name='lista_medicamentos'),
     path('agregar_medicamento/', views.AgregarMedicamento.as_view(), name='agregar_medicamento'),
-    path('<int:pk>/editar', views.EditarMedicamento.as_view(), name='editar_medicamento'),    
+    path('<int:pk>/editar_medicamento', views.EditarMedicamento.as_view(), name='editar_medicamento'),    
     path('<int:pk>/eliminar_medicamento', views.EliminarMedicamento.as_view(), name='eliminar_medicamento'),
 ]
